@@ -43,7 +43,7 @@ export class MessageRetrieved {
         exec
           .exec(commit, [], options)
           .then(_ => {
-            const match = /skip ci|ci skip/.test(myOutput)
+            const match = /ui test|test ui/.test(myOutput)
             const shouldRun = (!match).toString()
             console.log('match: ', match)
             core.setOutput('shouldRun', shouldRun)
